@@ -45,10 +45,6 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
-      - name: Update Snapshot Dependencies 
-        run: | 
-          mvn --batch-mode 
-          --update-snapshot verify
       - name: Build Jar
         run: mkdir staging && cp target/*.jar staging
     
