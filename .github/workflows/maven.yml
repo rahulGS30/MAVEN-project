@@ -34,19 +34,19 @@ jobs:
     - name: Run Tests
       run: mvn -B test --file pom.xml
   publish-job:
-  needs: test
-  runs-on: ubuntu-latest
-  steps:
-    - name: Get code
-      uses: actions/checkout@v3
-    - name: Set up JDK 17
-      uses: actions/setup-java@v3
-      with: 
-        java-version: '17'
-        distribution: 'temurin'
-        cache: maven
-    - name: Update Snapshot Dependencies 
-      run: mvn --batch-mode--update-snapshot verify
-    - name: Build Jar
-      run: mkdir staging && cp target/*.jar staging
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+      - name: Update Snapshot Dependencies 
+        run: mvn --batch-mode--update-snapshot verify
+      - name: Build Jar
+        run: mkdir staging && cp target/*.jar staging
     
