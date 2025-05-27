@@ -57,7 +57,7 @@ jobs:
       - name: create stating and move jar
         run: mkdir staging && cp *.jar staging
       - name: Upload JAR to staging
-        uses: action/upload-artifact@v4
+        uses: actions/upload-artifact@v4
         with: 
           name: staged-jar
           path: staging/      
