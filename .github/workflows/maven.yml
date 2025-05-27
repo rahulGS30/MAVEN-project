@@ -50,4 +50,4 @@ jobs:
           name: Package
           path: staging
       - name: Build Jar
-        run: mkdir staging && cp target/*.jar staging
+        run: mkdir staging && cp *.jar staging
